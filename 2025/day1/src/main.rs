@@ -55,6 +55,9 @@ fn main() {
             zero_crossings += zc + 1;
             starting_value = rem;
         } else if starting_value + item <= 0 {
+            if starting_value == 0 {
+                zero_crossings -= 1; // we will have already counted the 0 from the last iteration
+            }
             println!(
                 "moved past 0 with starting_value: {}, item: {}, zc's so far: {}",
                 starting_value, item, zero_crossings
